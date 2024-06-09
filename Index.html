@@ -1,3 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实时时钟与希伯来历节期倒计时</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .clock-container {
+            margin-bottom: 20px;
+        }
+        .countdown {
+            color: black;
+            font-weight: bold;
+        }
+        strong {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        const hebrewMonths = {
+            "Nisan": "尼散月",
+            "Iyar": "以亚月",
+            "Sivan": "西弯月",
+            "Tammuz": "塔木兹月",
+            "Av": "亚夫月",
+            "Elul": "以禄月",
+            "Tishrei": "提斯利月",
+            "Cheshvan": "马尔赫什万月",
+            "Kislev": "基斯流月",
+            "Tevet": "提别月",
+            "Shevat": "细罢特月",
+            "Adar": "亚达月",
+            "Adar II": "亚达二月"
+        };
+
+        const festivals = [
+            { name: "逾越节", date: "2024-04-22T00:00:00", hebrewDate: "尼散月 15" },
+            { name: "七七节", date: "2024-06-11T00:00:00", hebrewDate: "西弯月 6" },
+            { name: "吹角节", date: "2024-10-03T00:00:00", hebrewDate: "提斯利月 1" },
+            { name: "赎罪日", date: "2024-10-12T00:00:00", hebrewDate: "提斯利月 10" },
+            { name: "住棚节", date: "2024-10-17T00:00:00", hebrewDate: "提斯利月 15" }
+        ];
+
+        async function updateClocksAndHebrewDate() {
+            // 获取当前时间
+            const now = new Date();
+
+            // 获取各地时间
+            const jerusalemTime = now.toLocaleString("zh-CN", { timeZone: "Asia/Jerusalem", hour12: false });
+            const beijingTime = now.toLocaleString("zh-CN", { timeZone: "Asia/Shanghai", hour12: false });
+            const newYorkTime = now.toLocaleString("zh-CN", { timeZone: "America/New_York", hour12: false });
+
+            document.getElementById('jerusalem-time').innerText = jerusalemTime;
+            document.getElementById('beijing-time').innerText = beijingTime;
+            document.getElementById('ny-time').innerText = newYorkTime;
+
+            // 获取耶路撒冷的当前日期
+            const jerusalemNow = new Date(now.toLocaleString("en-US", { timeZone: "Asia/Jerusalem" }));
+            const year = jerusalemNow.getFullYear();
+            const month = jerusalemNow.getMonth() + 1;
+            const day = jerusalemNow.getDate();
+
+            // 请求希伯来历转换
+            const response = await fetch(`https://www.hebcal.com/converter?cfg=json&gy=${year}&gm=${month}&gd=${day}&g2h=1`);
+            const hebrewData = await response.json();
+
+            const hebrewYear = hebrewData.hy;
+            const hebrewMonth = hebrewMonths[hebrewData.hm] || hebrewData.hm;
+            const hebrewDay = hebrewData.hd;
+            const hebrewDate = `希伯来历 ${hebrewYear}年 ${hebrewMonth} ${hebrewDay}日 ${jerusalemNow.toLocaleTimeString("zh-CN", { hour12: false })}`;
+            document.getElementById('hebrew-time').innerText = hebrewDate;
+
+            // 更新节日倒计时
+            festivals.forEach(festival => {
+                const festivalDate = new Date(festival.date);
+                const diff = festivalDate - now;
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                const countdownText = `${days}天 ${hours}小时 ${minutes}分钟 ${seconds}秒`;
+                document.getElementById(`countdown-${festival.name}`).innerText = countdownText;
+            });
+        }
+
+        setInterval(updateClocksAndHebrewDate, 1000);
+        window.onload = updateClocksAndHebrewDate;
+    </script>
+</head>
+<body>
+    <h1>实时时钟与希伯来历节期倒计时</h1>
+    <div class="clock-container">
+        <strong>耶路撒冷时间 (西历)：</strong> <span id="jerusalem-time"></span>
+    </div>
+    <div class="clock-container">
+        <strong>耶路撒冷时间 (希伯来历)：</strong> <span id="hebrew-time"></span>
+    </div>
+    <div class="clock-container">
+        <strong>北京时间：</strong> <span id="beijing-time"></span>
+    </div>
+    <div class="clock-container">
+        <strong>纽约时间：</strong> <span id="ny-time"></span>
+    </div>
+    <div class="clock-container">
+        <strong>逾越节：</strong> 2024年4月22日 <span id="countdown-逾越节" class="countdown"></span>
+    </div>
+    <div class="clock-container">
+        <strong>七七节：</strong> 2024年6月11日 <span id="countdown-七七节" class="countdown"></span>
+    </div>
+    <div class="clock-container">
+        <strong>吹角节：</strong> 2024年10月3日 <span id="countdown-吹角节" class="countdown"></span>
+    </div>
+    <div class="clock-container">
+        <strong>赎罪日：</strong> 2024年10月12日 <span id="countdown-赎罪日" class="countdown"></span>
+    </div>
+    <div class="clock-container">
+        <strong>住棚节：</strong> 2024年10月17日 <span id="countdown-住棚节" class="countdown"></span>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>未来五年的希伯来节期倒计时</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .clock-container {
+            margin-bottom: 20px;
+        }
+        .countdown {
+            color: black;
+            font-weight: bold;
+        }
+        strong {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        const futureFestivals = [
+            { name: "逾越节", dates: ["2024-04-22T00:00:00", "2025-04-12T00:00:00", "2026-04-01T00:00:00", "2027-04-21T00:00:00", "2028-04-10T00:00:00"] },
+            { name: "五旬节", dates: ["2024-06-11T00:00:00", "2025-06-01T00:00:00", "2026-05-21T00:00:00", "2027-06-10T00:00:00", "2028-05-30T00:00:00"] },
+            { name: "吹角节", dates: ["2024-10-03T00:00:00", "2025-09-23T00:00:00", "2026-09-13T00:00:00", "2027-10-02T00:00:00", "2028-09-21T00:00:00"] },
+            { name: "赎罪日", dates: ["2024-10-12T00:00:00", "2025-10-02T00:00:00", "2026-09-22T00:00:00", "2027-10-11T00:00:00", "2028-09-30T00:00:00"] },
+            { name: "住棚节", dates: ["2024-10-17T00:00:00", "2025-10-07T00:00:00", "2026-09-27T00:00:00", "2027-10-16T00:00:00", "2028-10-05T00:00:00"] }
+        ];
+
+        function updateFutureFestivalCountdowns() {
+            const now = new Date();
+
+            futureFestivals.forEach(festival => {
+                festival.dates.forEach((date, index) => {
+                    const festivalDate = new Date(date);
+                    const diff = festivalDate - now;
+                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    const countdownText = `${days}天`;
+                    document.getElementById(`countdown-${festival.name}-${index}`).innerText = countdownText;
+                });
+            });
+        }
+
+        setInterval(updateFutureFestivalCountdowns, 1000);
+        window.onload = updateFutureFestivalCountdowns;
+    </script>
+</head>
+<body>
+    <h1>未来五年的希伯来节期倒计时</h1>
+    <div class="clock-container">
+        <strong>逾越节 2024：</strong> 2024年4月22日 <span id="countdown-逾越节-0" class="countdown"></span>
+    </div>
+    <div class="clock-container">
+        <strong>逾越节 2025：</strong> 2025年4月12日 <span id="countdown-逾越节-1" class="countdown"></span>
+    </div>
+    <div class="clock-container">
+        <strong>逾越节 2026：</strong> 2026年4月1日 <span id="countdown-逾越节-2" class="countdown"></span>
+    </div>
+    <div class="clock-container">
+        <strong>逾越节 2027：</strong> 2027年4月21日 <span id="countdown-逾越节-3" class="countdown"></span>
+    </div>
+    <div class="clock-container">
+        <strong>逾越节 2028：</strong> 2028年4月10日 <span id="countdown-逾越节-4" class="countdown"></span>
+    </div>
+    <div class="clock-container">
+        <strong>五旬节 2024：</strong> 2024年6月11日 <span id="countdown-五旬节-0" class="countdown"></span>
+    </div>
+    <div class="clock-container">
+        <strong>五旬节 2025：</strong> 2025年6月1日 <span id="countdown-五旬节-1" class="countdown"></span>
+    </div>
+    <div class="clock-container">
+        <strong>五旬节 2026：</strong> 2026年5月21日 <span id="countdown-五旬节-2" class="countdown"></span>
+    </div>
+    <div class="clock-container">
+        <strong>五旬节 2027：</strong> 2027年6月10日 <span id="countdown-五旬节-3" class="countdown"></span>
+    </div>
+    <div class="clock-container">
+        <strong>五旬节 2028：</strong> 2028年5月30日 <span id="countdown-五旬节-4" class="countdown"></span>
+    </div>
+    <div class="clock-container">
+        <strong>吹角节 2024：</strong> 2024年10月3日 <span id="countdown-吹角节-0" class="countdown"></span>
+    </div>
+    <div class="clock-container">
+        <strong>吹角节 2025：</strong> 2025年9月23日 <span id="countdown-吹角节-1" class="countdown"></span>
+    </div>
+    <div class="clock-container">
+        <strong>吹角节 2026：</strong> 2026年9月13日 <span id="countdown-吹角节-2" class="countdown"></span>
+    </div>
+    <div class="clock-container">
+        <strong>吹角节 2027：</strong> 2027年10月2日 <span id="countdown-吹角节-3" class="countdown"></span>
+    </div>
+    <div class="clock-container">
+        <strong>吹角节 2028：</strong> 2028年9月21日 <span id="countdown-吹角节-4" class="countdown"></span>
+    </div>
+    <div class="clock-container">
+        <strong>赎罪日 2024：</strong> 2024年10月12日 <span id="countdown-赎罪日-0" class="countdown"></span>
+    </div>
+    <div class="clock-container">
+        <strong>赎罪日 2025：</strong> 2025年10月2日 <span id="countdown-赎罪日-1" class="countdown"></span>
+    </div>
+    <div class="clock-container">
+        <strong>赎罪日 2026：</strong> 2026年9月22日 <span id="countdown-赎罪日-2" class="countdown"></span>
+    </div>
+    <div class="clock-container">
+        <strong>赎罪日 2027：</strong> 2027年10月11日 <span id="countdown-赎罪日-3" class="countdown"></span>
+    </div>
+    <div class="clock-container">
+        <strong>赎罪日 2028：</strong> 2028年9月30日 <span id="countdown-赎罪日-4" class="countdown"></span>
+    </div>
+    <div class="clock-container">
+        <strong>住棚节 2024：</strong> 2024年10月17日 <span id="countdown-住棚节-0" class="countdown"></span>
     </div>
     <div class="clock-container">
         <strong>住棚节 2025：</strong> 2025年10月7日 <span id="countdown-住棚节-1" class="countdown"></span>
