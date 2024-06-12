@@ -2,7 +2,7 @@ name: Update HTML
 
 on:
   schedule:
-    - cron: '*/30 * * * *'  # 每30分钟运行一次
+    - cron: '*/15 * * * *'  # 每30分钟运行一次
 
 jobs:
   build:
