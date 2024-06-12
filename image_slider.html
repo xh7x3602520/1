@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Slider</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    .slider-container {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .slider {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+    .slide {
+      flex: 0 0 100%;
+      overflow: hidden;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="slider-container">
+    <div class="slider">
+   <div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_070933.jpg" alt="Image 1"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_070938.jpg" alt="Image 2"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_070949.jpg" alt="Image 3"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_071004.jpg" alt="Image 4"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_071024.jpg" alt="Image 5"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_071050.jpg" alt="Image 6"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_071223.jpg" alt="Image 7"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_071233.jpg" alt="Image 8"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_071252.jpg" alt="Image 9"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_072904.jpg" alt="Image 10"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_072922.jpg" alt="Image 11"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_072927.jpg" alt="Image 12"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_072937.jpg" alt="Image 13"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_072941.jpg" alt="Image 14"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_072952.jpg" alt="Image 15"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_073156.jpg" alt="Image 16"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_073200.jpg" alt="Image 17"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_073415.jpg" alt="Image 18"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_074704.jpg" alt="Image 19"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_074718.jpg" alt="Image 20"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_075731.jpg" alt="Image 21"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_075825.jpg" alt="Image 22"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_080207.jpg" alt="Image 23"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_080217.jpg" alt="Image 24"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_080230.jpg" alt="Image 25"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_080252.jpg" alt="Image 26"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_080308.jpg" alt="Image 27"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_080330.jpg" alt="Image 28"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_080359.jpg" alt="Image 29"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_080444.jpg" alt="Image 30"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_080757.jpg" alt="Image 31"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_080809.jpg" alt="Image 32"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_080900.jpg" alt="Image 33"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_080903.jpg" alt="Image 34"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_080920.jpg" alt="Image 35"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_080923.jpg" alt="Image 36"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/q_20240612_081451.jpg" alt="Image 37"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/Screenshot_20240610_150517.jpg" alt="Image 38"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/Screenshot_20240610_230244.jpg" alt="Image 39"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/Screenshot_20240610_230248.jpg" alt="Image 40"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/Screenshot_20240610_230329.jpg" alt="Image 41"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/Screenshot_20240610_230414.jpg" alt="Image 42"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/Screenshot_20240610_230457.jpg" alt="Image 43"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/Screenshot_20240612_074921.jpg" alt="Image 44"></div>
+<div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/Screenshot_20240612_074924.jpg" alt="Image 45"></div>
+ 
+   </div>
+  </div>
+
+  <script>
+    const slider = document.querySelector('.slider');
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    slider.addEventListener('click', (event) => {
+      const width = slides[0].clientWidth;
+      const x = event.clientX;
+
+      if (x < window.innerWidth / 2) {
+        currentSlide--;
+        if (currentSlide < 0) {
+          currentSlide = slides.length - 1;
+        }
+      } else {
+        currentSlide++;
+        if (currentSlide >= slides.length) {
+          currentSlide = 0;
+        }
+      }
+      slider.style.transform = `translateX(-${currentSlide * width}px)`;
+    });
+  </script>
+</body>
+</html>
