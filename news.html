@@ -8,7 +8,7 @@
     body {
       margin: 0;
       padding: 0;
-      overflow: hidden;
+      background-color: black; /* 设置背景颜色为黑色 */
     }
     .slider-container {
       width: 100%;
@@ -16,31 +16,38 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
     }
     .slider {
-      width: 300%; /* 设置为三倍宽度，以便在左右点击时移动到下一张图片 */
+      width: 100%; /* 每次只显示一张图片 */
       display: flex;
-      align-items: center;
-      transition: transform 0.3s ease;
     }
     .slide {
-      flex: 0 0 100%;
-      overflow: hidden;
+      min-width: 100%; /* 确保每张图片占满整个视口宽度 */
+      transition: transform 0.3s ease;
     }
     img {
       width: 100%;
-      height: auto;
+      display: block; /* 防止图片下方出现空隙 */
     }
   </style>
 </head>
 <body>
   <div class="slider-container">
-    <div class="slider">
+    <div class="slider" id="slider">
       <!-- 图片链接 -->
       
       
-
+      
+      
+      
+      
+      
+      
+      
+      
+      
+       
+      
       
 <div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/Screenshot_20240612_074924.jpg" alt="Image 1"></div>
 <div class="slide"><img src="http://43.136.235.235/d/%E8%B5%84%E6%96%99/news/Screenshot_20240612_074921.jpg" alt="Image 2"></div>
@@ -243,35 +250,27 @@
       
       
       
-      
-      
-   </div>
+      <!-- 更多图片... -->
+    </div>
   </div>
 
   <script>
-    const slider = document.querySelector('.slider');
+    const slider = document.getElementById('slider');
     let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
+    const slides = slider.getElementsByClassName('slide');
+    const totalSlides = slides.length;
 
-    slider.addEventListener('click', (event) => {
-      const width = slides[0].clientWidth;
-      if (event.clientX < window.innerWidth / 2) { // 点击页面左半部分向左滑动
-        currentSlide--;
-        if (currentSlide < 0) {
-          currentSlide = slides.length - 1;
-        }
-      } else { // 点击页面右半部分向右滑动
-        currentSlide++;
-        if (currentSlide >= slides.length) {
-          currentSlide = 0;
-        }
+    document.addEventListener('click', (event) => {
+      const width = slider.clientWidth;
+      if (event.clientX < width / 2) {
+        // 如果点击页面左边，显示上一张图片
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      } else {
+        // 如果点击页面右边，显示下一张图片
+        currentSlide = (currentSlide + 1) % totalSlides;
       }
-      updateSlider(width);
-    });
-
-    function updateSlider(width) {
       slider.style.transform = `translateX(-${currentSlide * width}px)`;
-    }
+    });
   </script>
 </body>
 </html>
