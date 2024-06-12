@@ -1,0 +1,30 @@
+name: Update HTML
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'  # 每30分钟运行一次
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install python3-pip -y
+          pip3 install requests beautifulsoup4
+
+      - name: Generate HTML
+        run: python generate_html.py  # 替换为生成HTML文件的命令
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Update HTML"
+          git push
