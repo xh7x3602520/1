@@ -27,39 +27,39 @@ html_template = """
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Image Slider</title>
   <style>
-    body {
+    body {{
       margin: 0;
       padding: 0;
       overflow: hidden;
-    }
-    .slider-container {
+    }}
+    .slider-container {{
       width: 100%;
       height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
-    }
-    .slider {
+    }}
+    .slider {{
       width: 100%;
       display: flex;
       align-items: center;
       transition: transform 0.3s ease;
-    }
-    .slide {
+    }}
+    .slide {{
       flex: 0 0 100%;
       overflow: hidden;
-    }
-    img {
+    }}
+    img {{
       width: 100%;
       height: auto;
-    }
+    }}
   </style>
 </head>
 <body>
   <div class="slider-container">
     <div class="slider">
-      %s
+      {}
     </div>
   </div>
 
@@ -68,35 +68,33 @@ html_template = """
     const slides = document.querySelectorAll('.slide');
     let currentSlide = 0;
 
-    slider.addEventListener('click', (event) => {
+    slider.addEventListener('click', (event) => {{
       const width = slides[0].clientWidth;
       const x = event.clientX;
 
-      if (x < window.innerWidth / 2) {
+      if (x < window.innerWidth / 2) {{
         currentSlide--;
-        if (currentSlide < 0) {
+        if (currentSlide < 0) {{
           currentSlide = slides.length - 1;
-        }
-      } else {
+        }}
+      }} else {{
         currentSlide++;
-        if (currentSlide >= slides.length) {
+        if (currentSlide >= slides.length) {{
           currentSlide = 0;
-        }
-      }
-      slider.style.transform = `translateX(-${currentSlide * width}px)`;
-    });
+        }}
+      }}
+      slider.style.transform = `translateX(-${{currentSlide * width}}px)`;
+    }});
   </script>
 </body>
 </html>
 """
 
 # 替换图片链接
-image_tags = ""
-for idx, link in enumerate(image_links, start=1):
-    image_tags += f"<div class='slide'><img src='{link}' alt='Image {idx}'></div>\n"
+image_tags = "".join("<div class='slide'><img src='{}' alt='Image {}'></div>\n".format(link, idx) for idx, link in enumerate(image_links, start=1))
 
 # 插入图片链接到HTML模板中
-final_html = html_template % image_tags
+final_html = html_template.format(image_tags)
 
 # 将HTML内容写入文件
 with open("image_slider.html", "w") as f:
