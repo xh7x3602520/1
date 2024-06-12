@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Slider</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    .slider-container {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .slider {
+      width: 300%; /* 设置为三倍宽度，以便在左右点击时移动到下一张图片 */
+      display: flex;
+      align-items: center;
+      transition: transform 0.3s ease;
+    }
+    .slide {
+      flex: 0 0 100%;
+      overflow: hidden;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="slider-container">
+    <div class="slider">
+      <!-- 图片链接 -->
+      
+      
+
+
+
+
+
+
+      
+      <div class="slide"><img src="http://43.136.235.235/d/资料/news/Screenshot_20240612_074924.jpg" alt="Image 1"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/Screenshot_20240612_074921.jpg" alt="Image 2"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/Screenshot_20240610_230457.jpg" alt="Image 3"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/Screenshot_20240610_230414.jpg" alt="Image 4"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/Screenshot_20240610_230329.jpg" alt="Image 5"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/Screenshot_20240610_230248.jpg" alt="Image 6"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/Screenshot_20240610_230244.jpg" alt="Image 7"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/Screenshot_20240610_150517.jpg" alt="Image 8"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_081451.jpg" alt="Image 9"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_080923.jpg" alt="Image 10"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_080920.jpg" alt="Image 11"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_080903.jpg" alt="Image 12"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_080900.jpg" alt="Image 13"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_080809.jpg" alt="Image 14"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_080757.jpg" alt="Image 15"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_080444.jpg" alt="Image 16"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_080359.jpg" alt="Image 17"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_080330.jpg" alt="Image 18"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_080308.jpg" alt="Image 19"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_080252.jpg" alt="Image 20"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_080230.jpg" alt="Image 21"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_080217.jpg" alt="Image 22"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_080207.jpg" alt="Image 23"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_075825.jpg" alt="Image 24"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_075731.jpg" alt="Image 25"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_074718.jpg" alt="Image 26"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_074704.jpg" alt="Image 27"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_073415.jpg" alt="Image 28"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_073200.jpg" alt="Image 29"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_073156.jpg" alt="Image 30"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_072952.jpg" alt="Image 31"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_072941.jpg" alt="Image 32"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_072937.jpg" alt="Image 33"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_072927.jpg" alt="Image 34"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_072922.jpg" alt="Image 35"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_072904.jpg" alt="Image 36"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_071252.jpg" alt="Image 37"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_071233.jpg" alt="Image 38"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_071223.jpg" alt="Image 39"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_071050.jpg" alt="Image 40"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_071024.jpg" alt="Image 41"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_071004.jpg" alt="Image 42"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_070949.jpg" alt="Image 43"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_070938.jpg" alt="Image 44"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_070933.jpg" alt="Image 45"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_070842.jpg" alt="Image 46"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_070759.jpg" alt="Image 47"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_070745.jpg" alt="Image 48"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_070734.jpg" alt="Image 49"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_070717.jpg" alt="Image 50"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_070513.jpg" alt="Image 51"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_070447.jpg" alt="Image 52"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_070248.jpg" alt="Image 53"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_070241.jpg" alt="Image 54"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_070230.jpg" alt="Image 55"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_070225.jpg" alt="Image 56"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_070207.jpg" alt="Image 57"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_070146.jpg" alt="Image 58"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_070135.jpg" alt="Image 59"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_070108.jpg" alt="Image 60"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_070049.jpg" alt="Image 61"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_070028.jpg" alt="Image 62"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_070019.jpg" alt="Image 63"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_070004.jpg" alt="Image 64"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_065952.jpg" alt="Image 65"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_065925.jpg" alt="Image 66"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240612_065906.jpg" alt="Image 67"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_205225.jpg" alt="Image 68"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_204908.jpg" alt="Image 69"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_204545.jpg" alt="Image 70"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_204318.jpg" alt="Image 71"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_203830.jpg" alt="Image 72"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_203712.jpg" alt="Image 73"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_203531.jpg" alt="Image 74"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_202147.jpg" alt="Image 75"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_202048.jpg" alt="Image 76"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_202046.jpg" alt="Image 77"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_201706.jpg" alt="Image 78"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_201645.jpg" alt="Image 79"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_201643.jpg" alt="Image 80"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_201300.jpg" alt="Image 81"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_201245.jpg" alt="Image 82"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_201044.jpg" alt="Image 83"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_201021.jpg" alt="Image 84"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_194114.jpg" alt="Image 85"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_193951.jpg" alt="Image 86"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_193818.jpg" alt="Image 87"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_193736.jpg" alt="Image 88"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_193730.jpg" alt="Image 89"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_193726.jpg" alt="Image 90"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_193536.jpg" alt="Image 91"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_193512.jpg" alt="Image 92"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_193458.jpg" alt="Image 93"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_193407.jpg" alt="Image 94"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_193141.jpg" alt="Image 95"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_072840.jpg" alt="Image 96"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_072819.jpg" alt="Image 97"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_072724.jpg" alt="Image 98"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_072701.jpg" alt="Image 99"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_072606.jpg" alt="Image 100"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_072527.jpg" alt="Image 101"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_072515.jpg" alt="Image 102"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_072407.jpg" alt="Image 103"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_072340.jpg" alt="Image 104"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_072238.jpg" alt="Image 105"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_072226.jpg" alt="Image 106"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_072138.jpg" alt="Image 107"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_072041.jpg" alt="Image 108"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_071928.jpg" alt="Image 109"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_071651.jpg" alt="Image 110"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_071519.jpg" alt="Image 111"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_071423.jpg" alt="Image 112"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_071356.jpg" alt="Image 113"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_071323.jpg" alt="Image 114"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_071247.jpg" alt="Image 115"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_070931.jpg" alt="Image 116"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_070853.jpg" alt="Image 117"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_070755.jpg" alt="Image 118"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_070720.jpg" alt="Image 119"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_070521.jpg" alt="Image 120"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_070455.jpg" alt="Image 121"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_070259.jpg" alt="Image 122"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_070204.jpg" alt="Image 123"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_070002.jpg" alt="Image 124"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_065938.jpg" alt="Image 125"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_065930.jpg" alt="Image 126"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_065919.jpg" alt="Image 127"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_065847.jpg" alt="Image 128"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_065732.jpg" alt="Image 129"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_065642.jpg" alt="Image 130"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_065457.jpg" alt="Image 131"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_065352.jpg" alt="Image 132"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_065252.jpg" alt="Image 133"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_065237.jpg" alt="Image 134"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_065231.jpg" alt="Image 135"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_065220.jpg" alt="Image 136"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_065212.jpg" alt="Image 137"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_065141.jpg" alt="Image 138"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_065054.jpg" alt="Image 139"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_065041.jpg" alt="Image 140"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_065019.jpg" alt="Image 141"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_064917.jpg" alt="Image 142"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_064754.jpg" alt="Image 143"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_064503.jpg" alt="Image 144"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_064408.jpg" alt="Image 145"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_064327.jpg" alt="Image 146"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_064249.jpg" alt="Image 147"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_064224.jpg" alt="Image 148"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_064218.jpg" alt="Image 149"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_064144.jpg" alt="Image 150"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240611_064100.jpg" alt="Image 151"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_232313.jpg" alt="Image 152"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_232052.jpg" alt="Image 153"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_232038.jpg" alt="Image 154"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_231452.jpg" alt="Image 155"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_231221.jpg" alt="Image 156"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_231208.jpg" alt="Image 157"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_231057.jpg" alt="Image 158"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_230953.jpg" alt="Image 159"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_230859.jpg" alt="Image 160"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_230814.jpg" alt="Image 161"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_230707.jpg" alt="Image 162"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_190638.jpg" alt="Image 163"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_190321.jpg" alt="Image 164"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_190134.jpg" alt="Image 165"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_190103.jpg" alt="Image 166"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_190017.jpg" alt="Image 167"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_190000.jpg" alt="Image 168"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_185653.jpg" alt="Image 169"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_185247.jpg" alt="Image 170"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_185238.jpg" alt="Image 171"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_185106.jpg" alt="Image 172"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_184952.jpg" alt="Image 173"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_184905.jpg" alt="Image 174"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_184822.jpg" alt="Image 175"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_184811.jpg" alt="Image 176"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_184722.jpg" alt="Image 177"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_184709.jpg" alt="Image 178"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_184640.jpg" alt="Image 179"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_184611.jpg" alt="Image 180"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_184554.jpg" alt="Image 181"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_184536.jpg" alt="Image 182"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_184439.jpg" alt="Image 183"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_184409.jpg" alt="Image 184"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_184356.jpg" alt="Image 185"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_184340.jpg" alt="Image 186"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_184315.jpg" alt="Image 187"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_184147.jpg" alt="Image 188"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_184106.jpg" alt="Image 189"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_184022.jpg" alt="Image 190"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_183846.jpg" alt="Image 191"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_174316.png" alt="Image 192"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_174142.png" alt="Image 193"></div>
+<div class="slide"><img src="http://43.136.235.235/d/资料/news/q_20240610_174107.png" alt="Image 194"></div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+   </div>
+  </div>
+
+  <script>
+    const slider = document.querySelector('.slider');
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    slider.addEventListener('click', (event) => {
+      const width = slides[0].clientWidth;
+      if (event.clientX < window.innerWidth / 2) { // 点击页面左半部分向左滑动
+        currentSlide--;
+        if (currentSlide < 0) {
+          currentSlide = slides.length - 1;
+        }
+      } else { // 点击页面右半部分向右滑动
+        currentSlide++;
+        if (currentSlide >= slides.length) {
+          currentSlide = 0;
+        }
+      }
+      updateSlider(width);
+    });
+
+    function updateSlider(width) {
+      slider.style.transform = `translateX(-${currentSlide * width}px)`;
+    }
+  </script>
+</body>
+</html>
